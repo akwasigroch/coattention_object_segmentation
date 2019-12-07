@@ -2,9 +2,20 @@
 
 ## Description
 
-This is my partial implementation of the paper: **Co-attention CNNs for Unsupervised Object Co-segmentation** by Kuang-Jui Hsu, Yen-Yu Lin, and Yung-Yu Chuang  
-Paper link:  
-https://www.csie.ntu.edu.tw/~cyy/publications/papers/Hsu2018CAC.pdf
+This is my partial implementation of the paper: **Co-attention CNNs for Unsupervised Object Co-segmentation** by Kuang-Jui Hsu, Yen-Yu Lin, and Yung-Yu Chuang (https://www.csie.ntu.edu.tw/~cyy/publications/papers/Hsu2018CAC.pdf)
+
+The systems consist of two networks:
+- generator (FCN32s)
+- feature extractor (ResNet50)
+
+The generator produces masks, that are used to generate objects and background images, by simple element-wise product:
+- object_image = image * mask
+- background_image = image * (1 - mask)
+
+ Next, those images are provided to the feature extractor to generate features that are used in the loss function.
+
+I implemented only one part of loss function - co-segmentation loss, however, it provides decent results. The co-segmentation loss aims to decrease the Euclidian distance between features of segmented objects and increase the Euclidian distance between features of objects and backgrounds. For better results, an additional part of loss function - mask loss - is needed, which could be interpreted as a regularization term. 
+
 
 ## Results
 ![](img/example0.png)
@@ -21,7 +32,7 @@ https://www.csie.ntu.edu.tw/~cyy/publications/papers/Hsu2018CAC.pdf
 I used FCN32s implementation available at https://github.com/pochih/FCN-pytorch
 
 The system was trained on the Internet Dataset http://people.csail.mit.edu/mrub/ObjectDiscovery/  
-I used the subset of this dataset, that is stored in following folders:
+I used the subset of this dataset, that is stored in the following folders:
 - Airplane100
 - Horse100
 - Car100  
