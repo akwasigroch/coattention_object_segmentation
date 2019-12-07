@@ -24,7 +24,9 @@ The system was trained on the Internet Dataset http://people.csail.mit.edu/mrub/
 I used the subset of this dataset, that is stored in following folders:
 - Airplane100
 - Horse100
-- Car100  
+- Car100
+
+
 To train the model create the simple folder structure:  
 ```
 .
