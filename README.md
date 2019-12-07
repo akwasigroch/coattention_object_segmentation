@@ -4,7 +4,7 @@
 
 This is my partial implementation of the paper: **Co-attention CNNs for Unsupervised Object Co-segmentation** by Kuang-Jui Hsu, Yen-Yu Lin, and Yung-Yu Chuang (https://www.csie.ntu.edu.tw/~cyy/publications/papers/Hsu2018CAC.pdf)
 
-The systems consist of two networks:
+The system consists of two networks:
 - generator (FCN32s)
 - feature extractor (ResNet50)
 
