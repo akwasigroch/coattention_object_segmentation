@@ -4,12 +4,8 @@
 
 This is my partial implementation of the paper: **Co-attention CNNs for Unsupervised Object Co-segmentation** by Kuang-Jui Hsu, Yen-Yu Lin, and Yung-Yu Chuang (https://www.csie.ntu.edu.tw/~cyy/publications/papers/Hsu2018CAC.pdf)
 
-<<<<<<< HEAD
-The systems consist of two network:
-=======
 The system consists of two networks:
->>>>>>> f81d3134ceb7150e872f5f65311ccde9fb838cd7
-- generator (FCN32s)
+- generator (FCN32)
 - feature extractor (ResNet50)
 
 The generator produces masks, that are used to generate objects and background images, by simple element-wise product:
