@@ -6,9 +6,6 @@ This is my partial implementation of the paper: **Co-attention CNNs for Unsuperv
 Paper link:  
 https://www.csie.ntu.edu.tw/~cyy/publications/papers/Hsu2018CAC.pdf
 
-
-
-
 ## Results
 ![](img/example0.png)
 ![](img/example1.png)
@@ -20,13 +17,14 @@ https://www.csie.ntu.edu.tw/~cyy/publications/papers/Hsu2018CAC.pdf
 - Tensorboard
 - Numpy
 - Matplotlib
-
+## Details
 I used FCN32s implementation available at https://github.com/pochih/FCN-pytorch
 
 The system was trained on the Internet Dataset http://people.csail.mit.edu/mrub/ObjectDiscovery/  
-I used the subset this dataset, that are stored in following folders:
+I used the subset of this dataset, that is stored in following folders:
 - Airplane100
 - Horse100
 - Car100
+
 
 
