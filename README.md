@@ -12,9 +12,9 @@ The generator produces masks, that are used to generate objects and background i
 - object_image = image * mask
 - background_image = image * (1 - mask)
 
- Next, those images are provided to the feature extractor to generate features that are used in the loss function.
+ Next, those images are provided to the feature extractor to generate features that are used in the loss function. Only the weights of the generator are adjusted during the training. The so-called co-segmentation loss aims to decrease the Euclidian distance between features of segmented objects and increase the Euclidian distance between features of objects and backgrounds. This make generator to produce masks that cover only common objects in the photos.
 
-I implemented only one part of loss function - co-segmentation loss, however, it provides decent results. The co-segmentation loss aims to decrease the Euclidian distance between features of segmented objects and increase the Euclidian distance between features of objects and backgrounds. For better results, an additional part of loss function - mask loss - is needed, which could be interpreted as a regularization term. 
+I implemented only one part of loss function - co-segmentation loss, however, it provides decent results.  For better results, an additional part of loss function - mask loss - is needed, which could be interpreted as a regularization term. The method is very sensitive to hyperparameter choice. 
 
 
 ## Results
